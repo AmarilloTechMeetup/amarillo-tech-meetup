@@ -3,17 +3,56 @@
   <head>
     <meta charset="utf-8">
     <title>Amarillo Tech Meetup</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Bootstrap Theme -->
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
   </head>
+
   <body>
-    <p> Just a placeholder for now.</p>
-    <form action="https://hmjj871ja3.execute-api.us-east-1.amazonaws.com/dev/join" method="post">
-      <div>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="you@example.com"/>
-      </div>
-      <div class="button">
-        <button type="submit">Signup for the Amarillo Tech Meetup Slack</button>
-      </div>      
-    </form>
+
+    <div id="slack">
+      <span id="prompt">Please enter your email address to join our Slack.</span>
+      <form id="join" action="https://hmjj871ja3.execute-api.us-east-1.amazonaws.com/dev/join" method="post">
+        <div id="slack-panel">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required/>
+        </div>
+        <div class="button">
+          <button type="submit">Signup for the Amarillo Tech Meetup Slack</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- JQuery -->
+    <script src="/js/jquery-3.1.1.min.js">
+    </script>
+
+    <script src="/js/jquery.form.min.js">
+    </script>
+
+    <!-- Bootstrap js -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+    </script>
+
+    <!-- Site JS -->
+    <script>
+      $(document).ready(function() {
+        var options = {
+          success:       showResponse,  // post-submit callback
+          dataType:  'json'        // 'xml', 'script', or 'json' (expected server response type)
+        };
+
+        $('#join').ajaxForm(options);
+      });
+
+      function showResponse(responseText, statusText, xhr, $form)  {
+        if ( responseText.message === 'Invitation sent' ) {
+          $('#slack').html("<p>Your invitation is on the way!</p>");
+        } else {
+          $('#prompt').text("Something went wrong. Please try again. If you continue to have problems, please contact bill@billglover.com for help.");
+        }
+      }
+    </script>
   </body>
 </html>
