@@ -113,9 +113,10 @@
       });
 
       function showResponse(responseText, statusText, xhr, $form)  {
-        if ( responseText.message === 'Invitation sent' ) {
+        if ( responseText.message.includes('Invitation sent') ) {
           $('#slack').html("<p>Your invitation is on the way!</p>");
         } else {
+          console.log("error: " + responseText.message);
           $('#prompt').text("Something went wrong. Please try again. If you continue to have problems, please contact bill@billglover.com for help.");
         }
       }
