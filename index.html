@@ -1,29 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <title>Amarillo Tech Meetup</title>
+    
     <!-- Bootstrap -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+
     <!-- Bootstrap Theme -->
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+
+    <!-- Cover theme -->
+    <link rel="stylesheet" href="/css/cover.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+        
   </head>
 
   <body>
 
-    <div id="slack">
-      <span id="prompt">Please enter your email address to join our Slack.</span>
-      <form id="join" action="https://hmjj871ja3.execute-api.us-east-1.amazonaws.com/dev/join" method="post">
-        <div id="slack-panel">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" placeholder="you@example.com" required/>
+    <div class="site-wrapper" id="top">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">Amarillo Tech Meetup</h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <!-- <li><a href="#">Home</a></li> -->
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <h1 class="cover-heading">You Are Not Alone</h1>
+            
+            <p class="lead">We are bringing together Tech professionals, students and hobbyists in the Texas Panhandle.</p>
+
+            <div id="slack" class="lead">
+              
+              <form id="join" action="https://hmjj871ja3.execute-api.us-east-1.amazonaws.com/dev/join" method="post">
+
+                <label id="prompt" for="email">Please enter your email address.</label>
+
+                <div id="input-panel" class="inner">
+                  <input type="email" id="email" name="email" placeholder="you@example.com" required/>
+                </div>
+                
+                <div class="button">
+                  <button type="submit" type="button" class="btn btn-danger">
+                    <i class="fa fa-slack" aria-hidden="true"></i>
+                    Join Our Slack Group
+                  </button>
+                </div>
+                
+              </form>
+              
+            </div>
+
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p></p>
+            </div>
+          </div>
+
         </div>
-        <div class="button">
-          <button type="submit">Signup for the Amarillo Tech Meetup Slack</button>
-        </div>
-      </form>
+
+      </div>
+
     </div>
 
+
+
+    
+
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/fe6dd21050.js"></script>
+    
     <!-- JQuery -->
     <script src="/js/jquery-3.1.1.min.js">
     </script>
@@ -54,5 +122,7 @@
         }
       }
     </script>
+
   </body>
+
 </html>
