@@ -106,7 +106,7 @@ input {
 
 @media (min-width: 768px) {
   .masthead-brand {
-    float: left;
+    // float: left;
   }
   .masthead-nav {
     float: right;
