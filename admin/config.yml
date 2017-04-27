@@ -3,7 +3,7 @@ backend:
   repo: ScriptGadget/amarillo-tech-meetup # Path to your Github repository
   branch: master # Branch to update
   site_domain: amarillo-tech-meetup.netlify.com # Your Netlify site address if different from host
-  media_folder: "img" # Media files will be stored in the repo under images/uploads
+  media_folder: "img/uploads" # Media files will be stored in the repo under images/uploads
 
 collections:
   - name: "blog" # Used in routes, e.g. /admin/collections/blog
